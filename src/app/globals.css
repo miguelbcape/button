@@ -1,0 +1,274 @@
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Open Sans Regular"), local("OpenSans-Regular"),
+    url(https://fonts.gstatic.com/s/opensans/v15/cJZKeOuBrn4kERxqtaUH3VtXRa8TVwTICgirnJhmVJw.woff2)
+      format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC,
+    U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+html,
+body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  font-family: "Open Sans", sans-serif;
+  font-size: 12px;
+  color: #fff;
+}
+
+body > div {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+p {
+  color: #000;
+}
+
+/* Normalización de estilos para botones */
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  display: inline-block;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+button {
+  width: 100%;
+  cursor: pointer;
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  position: relative;
+  text-align: center;
+  height: 100%;
+  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+button:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+button.l:after {
+  -webkit-animation: btnanime 4s ease-out infinite;
+  animation: btnanime 4s ease-out infinite;
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+  background: #fff;
+  border-radius: 3px;
+  bottom: 0;
+  content: "";
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+button span {
+  position: absolute;
+  left: 0px;
+  top: 50%;
+  width: 100%;
+  margin-top: -19px;
+}
+
+button span b {
+  display: block;
+  line-height: 20px;
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+
+button span b svg {
+  display: inline-block;
+  vertical-align: bottom;
+  width: 18px;
+  height: 19px;
+  margin-right: 5px;
+  fill: #fff;
+  enable-background: new 0 0 475.078 475.077;
+}
+
+button span b em {
+  display: inline-block;
+  vertical-align: bottom;
+  width: 16px;
+  height: 18px;
+  margin: 0px 8px;
+  background: url('https://i.imgur.com/pXAylUW.gif') no-repeat center;
+  background-size: 100%;
+  filter: invert(100%);
+  transform: rotate(180deg);
+}
+
+button span b em:last-child {
+  transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+}
+
+button span b u {
+  text-decoration: none;
+}
+
+button span i {
+  display: inline-block;
+  width: 90%;
+  line-height: 15px;
+  font-size: 11px;
+  font-style: normal;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  position: relative;
+  transition: all 0.3s;
+}
+
+button span i.ld {
+  font-size: 0px;
+}
+
+button span i.ld::after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 14px;
+  background: url("https://i.imgur.com/8MEGkek.gif") no-repeat center;
+  filter: invert(100%);
+  color: #000;
+}
+
+.parpadeo {
+  animation-name: parpadeo;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  -webkit-animation-name: parpadeo;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+}
+
+.pulse {
+  transform: scale(1);
+	animation: pulse .6s infinite;
+}
+
+.spin {
+  animation-name: spin;
+  animation-duration: .5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear; 
+}
+
+@-moz-keyframes parpadeo {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+@-webkit-keyframes parpadeo {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes parpadeo {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+@-webkit-keyframes pulse {
+  0% {
+		transform: scale(0.95);
+	}
+
+	50% {
+		transform: scale(1);
+	}
+
+	100% {
+		transform: scale(0.95);
+	}
+}
+@keyframes pulse {
+  0% {
+		transform: scale(0.95);
+	}
+
+	50% {
+		transform: scale(1);
+	}
+
+	100% {
+		transform: scale(0.95);
+	}
+}
+
+@keyframes btnanime {
+  0% {
+    opacity: 0;
+    width: 0;
+  }
+  25% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0;
+    width: 95%;
+  }
+  to {
+    opacity: 0;
+    width: 0;
+  }
+}
+
+@keyframes spin {
+  from {
+      transform:rotate(0deg);
+  }
+  to {
+      transform:rotate(360deg);
+  }
+}
+
+.st {
+  background: rgb(0, 167, 16);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 167, 16, 1) 0%,
+    rgba(0, 151, 255, 1) 100%
+  );
+}
